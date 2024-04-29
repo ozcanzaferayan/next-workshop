@@ -1,5 +1,5 @@
 "use client";
-import { createPokemon } from "@/app/pokemons/add/action";
+import { createPokemon } from "@/app/add/action";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useFormState, useFormStatus } from "react-dom";

@@ -1,7 +1,8 @@
 "use client";
-import { deletePokemon } from "@/app/pokemons/[id]/delete/action";
-import { Pokemon } from "@/app/pokemons/types";
+import { editPokemon } from "@/app/[id]/edit/action";
+import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useFormState, useFormStatus } from "react-dom";
 import { z } from "zod";
 
@@ -15,26 +16,31 @@ type Props = {
   pokemon: Pokemon;
 };
 
-const DeleteButton = () => {
+const EditButton = () => {
   const { pending } = useFormStatus();
 
   return (
     <Button type="submit" aria-disabled={pending}>
-      {pending ? "Pending" : "Delete"}
+      {pending ? "Pending" : "Save"}
     </Button>
   );
 };
 
-const DeleteForm = ({ pokemon }: Props) => {
-  const [state, formAction] = useFormState(deletePokemon, initialState);
+const EditForm = ({ pokemon }: Props) => {
+  const [state, formAction] = useFormState(editPokemon, initialState);
 
   return (
     <form action={formAction}>
-      <h1>Deleting {pokemon.name}. Are you sure?</h1>
-      <DeleteButton />
+      <Input
+        type="text"
+        name="name"
+        className="w-80"
+        defaultValue={pokemon.name}
+      />
+      <EditButton />
       <input type="hidden" name="id" value={pokemon.id} />
     </form>
   );
 };
 
-export default DeleteForm;
+export default EditForm;

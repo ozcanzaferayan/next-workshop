@@ -1,18 +1,25 @@
+import { getPokemons } from "@/app/loaders";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const page = () => {
+const Pokemons = async () => {
+  const data = await getPokemons();
   return (
     <>
+      <Button>
+        <Link href={"/pokemons/add"}>Add Pokemon</Link>
+      </Button>
       <ul>
-        <li>
-          <Link href={"/pokemons"}>Pokemons</Link>
-        </li>
-        <li>
-          <Link href={"/login"}>Login</Link>
-        </li>
+        {data.map((pokemon) => (
+          <li key={pokemon.id}>
+            {pokemon.name}
+            <Link href={`/pokemons/${pokemon.id}/edit`}> Edit</Link>
+            <Link href={`/pokemons/${pokemon.id}/delete`}> Delete</Link>
+          </li>
+        ))}
       </ul>
     </>
   );
 };
 
-export default page;
+export default Pokemons;

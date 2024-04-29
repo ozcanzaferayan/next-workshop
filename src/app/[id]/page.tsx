@@ -1,4 +1,4 @@
-import { getPokemon } from "@/app/pokemons/loaders";
+import { getPokemon } from "@/app/loaders";
 
 export type Props = {
   params: {

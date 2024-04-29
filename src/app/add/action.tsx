@@ -1,5 +1,5 @@
 "use server";
-import { API_URL } from "@/app/pokemons/loaders";
+import { API_URL } from "@/app/loaders";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
