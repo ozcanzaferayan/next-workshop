@@ -29,7 +29,7 @@ const Pokemons = async () => {
         ))}
       </CardContent>
       <CardFooter>
-        <Link href="/add" className="w-full">
+        <Link href="/new" className="w-full">
           <Button className="w-full">
             <PlusIcon className="mr-2 h-4 w-4" /> Add new
           </Button>
