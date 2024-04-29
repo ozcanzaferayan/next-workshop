@@ -2,11 +2,23 @@
   "pokemons": [
     {
       "id": 1,
-      "name": "Bulbasaur"
+      "name": "Bulbasaur",
+      "type": "Grass"
     },
     {
-      "id": 2,
-      "name": "Ivysaur"
+      "id": 4,
+      "name": "Charmander",
+      "type": "Fire"
+    },
+    {
+      "id": 7,
+      "name": "Squirtle",
+      "type": "Water"
+    },
+    {
+      "id": 25,
+      "name": "Pikachu",
+      "type": "Electric"
     }
   ]
 }

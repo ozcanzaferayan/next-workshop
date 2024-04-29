@@ -1,24 +1,41 @@
 import { getPokemons } from "@/app/loaders";
+import PokemonListItem from "@/app/pokemon-list-item";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { PlusIcon } from "lucide-react";
 import Link from "next/link";
 
 const Pokemons = async () => {
-  const data = await getPokemons();
+  const pokemons = await getPokemons();
   return (
-    <>
-      <Button>
-        <Link href={"/pokemons/add"}>Add Pokemon</Link>
-      </Button>
-      <ul>
-        {data.map((pokemon) => (
-          <li key={pokemon.id}>
-            {pokemon.name}
-            <Link href={`/pokemons/${pokemon.id}/edit`}> Edit</Link>
-            <Link href={`/pokemons/${pokemon.id}/delete`}> Delete</Link>
-          </li>
+    <Card className={cn("w-[380px]")}>
+      <CardHeader>
+        <CardTitle>Pokemons</CardTitle>
+        <CardDescription>
+          You have {pokemons.length} pokemons in Pokedex.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="grid divide-y">
+        {pokemons.map((pokemon) => (
+          <PokemonListItem key={pokemon.id} pokemon={pokemon} />
         ))}
-      </ul>
-    </>
+      </CardContent>
+      <CardFooter>
+        <Link href="/add" className="w-full">
+          <Button className="w-full">
+            <PlusIcon className="mr-2 h-4 w-4" /> Add new
+          </Button>
+        </Link>
+      </CardFooter>
+    </Card>
   );
 };
 
