@@ -16,7 +16,7 @@ import Link from "next/link";
 const Pokemons = async () => {
   const pokemons = await getPokemons();
   return (
-    <Card className={cn("w-[380px]")}>
+    <Card className={cn("w-[380px] m-4")}>
       <CardHeader>
         <CardTitle>Pokemons</CardTitle>
         <CardDescription>

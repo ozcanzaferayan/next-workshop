@@ -30,7 +30,7 @@ const PokemonListItem = ({ pokemon }: Props) => {
         </div>
         <div className="grid gap-1 flex-1">
           <h3 className="font-medium">{pokemon.name}</h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">
             {pokemon.type} Pokemon
           </p>
         </div>

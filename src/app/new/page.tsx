@@ -59,7 +59,7 @@ const NewPokemon = () => {
   });
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(formAction)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(formAction)} className="p-4">
         <Card className="w-[350px]">
           <CardHeader>
             <CardTitle>Create pokemon</CardTitle>

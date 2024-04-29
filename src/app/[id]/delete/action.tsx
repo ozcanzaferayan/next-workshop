@@ -25,6 +25,6 @@ export async function deletePokemon(prevState: any, formData: FormData) {
     method: "DELETE",
   });
 
-  revalidatePath("/pokemons");
-  redirect("/pokemons");
+  revalidatePath("/");
+  redirect("/");
 }

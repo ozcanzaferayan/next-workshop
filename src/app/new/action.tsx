@@ -9,6 +9,7 @@ export async function newPokemon(prevState: any, pokemon: Pokemon) {
     method: "POST",
     body: JSON.stringify(pokemon),
   });
+
   revalidatePath("/");
   redirect("/");
 }
