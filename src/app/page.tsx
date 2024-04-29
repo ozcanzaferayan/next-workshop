@@ -5,7 +5,7 @@ const page = () => {
     <>
       <ul>
         <li>
-          <Link href={"/register"}>Register</Link>
+          <Link href={"/pokemons"}>Pokemons</Link>
         </li>
         <li>
           <Link href={"/login"}>Login</Link>

@@ -1,20 +1,24 @@
-"use client";
-import { createPokemon } from "@/app/pokemons/action";
-import { Input } from "@/components/ui/input";
-import { useFormState } from "react-dom";
+import { getPokemons } from "@/app/pokemons/loaders";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-const initialState = {
-  message: "",
-};
-
-const Pokemons = () => {
-  const [state, formAction] = useFormState(createPokemon, initialState);
-  console.log(state);
+const Pokemons = async () => {
+  const data = await getPokemons();
   return (
-    <form action={formAction}>
-      <Input type="text" name="username" />
-      <button type="submit">Submit</button>
-    </form>
+    <>
+      <Button>
+        <Link href={"/pokemons/add"}>Add Pokemon</Link>
+      </Button>
+      <ul>
+        {data.map((pokemon) => (
+          <li key={pokemon.id}>
+            {pokemon.name}
+            <Link href={`/pokemons/${pokemon.id}/edit`}> Edit</Link>
+            <Link href={`/pokemons/${pokemon.id}/delete`}> Delete</Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 
