@@ -16,19 +16,17 @@ const PokemonListItem = ({ pokemon, hasActions = true }: Props) => {
       className="flex items-center justify-between bg-white dark:bg-gray-950 p-4 rounded-lg "
     >
       <div className="flex flex-1 items-center gap-4">
-        <div className="">
-          <Image
-            alt={pokemon.name}
-            className="rounded-full"
-            height="40"
-            src={"/placeholder.svg"}
-            style={{
-              aspectRatio: "40/40",
-              objectFit: "cover",
-            }}
-            width="40"
-          />
-        </div>
+        <Image
+          alt={pokemon.name}
+          className="rounded-full"
+          height="40"
+          src={"/placeholder.svg"}
+          style={{
+            aspectRatio: "40/40",
+            objectFit: "cover",
+          }}
+          width="40"
+        />
         <div className="grid gap-1 flex-1">
           <h3 className="font-medium">{pokemon.name}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">
