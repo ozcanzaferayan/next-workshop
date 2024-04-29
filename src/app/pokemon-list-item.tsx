@@ -6,9 +6,10 @@ import Link from "next/link";
 
 type Props = {
   pokemon: Pokemon;
+  hasActions?: boolean;
 };
 
-const PokemonListItem = ({ pokemon }: Props) => {
+const PokemonListItem = ({ pokemon, hasActions = true }: Props) => {
   return (
     <div
       key={pokemon.id}
@@ -34,16 +35,20 @@ const PokemonListItem = ({ pokemon }: Props) => {
             {pokemon.type} Pokemon
           </p>
         </div>
-        <Link href={`/${pokemon.id}/edit`}>
-          <Button variant="outline" size="icon">
-            <EditIcon className="h-4 w-4" />
-          </Button>
-        </Link>
-        <Link href={`/${pokemon.id}/delete`}>
-          <Button variant="outline" size="icon">
-            <TrashIcon className="h-4 w-4" />
-          </Button>
-        </Link>
+        {hasActions && (
+          <>
+            <Link href={`/${pokemon.id}/edit`}>
+              <Button variant="outline" size="icon">
+                <EditIcon className="h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href={`/${pokemon.id}/delete`}>
+              <Button variant="outline" size="icon">
+                <TrashIcon className="h-4 w-4" />
+              </Button>
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

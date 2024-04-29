@@ -3,17 +3,17 @@
     {
       "id": "1",
       "name": "Bulbasaur",
-      "type": "Grass"
+      "type": "grass"
     },
     {
       "id": "4",
       "name": "Charmander",
-      "type": "Fire"
+      "type": "fire"
     },
     {
       "id": "7",
       "name": "Squirtle",
-      "type": "Water"
+      "type": "water"
     }
   ]
 }

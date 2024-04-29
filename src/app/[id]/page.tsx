@@ -1,4 +1,12 @@
 import { getPokemon } from "@/app/loaders";
+import PokemonListItem from "@/app/pokemon-list-item";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export type Props = {
   params: {
@@ -8,9 +16,18 @@ export type Props = {
 
 const PokemonDetail = async ({ params: { id } }: Props) => {
   console.log("ID", id);
-  const data = await getPokemon(id);
-  console.log(data);
-  return <>{data.name}</>;
+  const pokemon = await getPokemon(id);
+  return (
+    <Card className={"w-[380px] m-4"}>
+      <CardHeader>
+        <CardTitle>Pokemon Detail</CardTitle>
+        <CardDescription>This is the detail of the Pokemon.</CardDescription>
+      </CardHeader>
+      <CardContent className="grid divide-y">
+        <PokemonListItem pokemon={pokemon} />
+      </CardContent>
+    </Card>
+  );
 };
 
 export default PokemonDetail;
