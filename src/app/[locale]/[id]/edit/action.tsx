@@ -7,6 +7,9 @@ import { redirect } from "next/navigation";
 export async function editPokemon(prevState: any, pokemon: Pokemon) {
   await fetch(`${API_URL}/pokemons/${pokemon.id}`, {
     method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(pokemon),
   });
 
