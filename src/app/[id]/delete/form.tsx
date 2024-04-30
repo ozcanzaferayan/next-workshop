@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { TrashIcon } from "lucide-react";
+import Link from "next/link";
 import { useFormState, useFormStatus } from "react-dom";
 import { z } from "zod";
 
@@ -51,8 +52,11 @@ const DeleteForm = ({ pokemon }: Props) => {
         <CardContent className="grid divide-y">
           <PokemonListItem pokemon={pokemon} hasActions={false} />
         </CardContent>
-        <CardFooter>
-          <Button className="w-full" variant={"destructive"}>
+        <CardFooter className="flex justify-between">
+          <Link href="/">
+            <Button variant="outline">Cancel</Button>
+          </Link>
+          <Button variant={"destructive"}>
             <TrashIcon className="mr-2 h-4 w-4" /> Delete
           </Button>
         </CardFooter>
