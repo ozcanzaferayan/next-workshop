@@ -4,7 +4,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 import initTranslations from "@/app/i18n";
+import LanguageChanger from "@/components/LanguageChanger";
 import { ThemeToggleButton } from "@/components/ThemeToggleButton";
+import TranslationsProvider from "@/components/TranslationsProvider";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,8 +22,10 @@ type Props = {
   locale: string;
 };
 
+const i18nNamespaces = ["main-layout"];
+
 export default async function MainLayout({ children, locale }: Props) {
-  const { t } = await initTranslations(locale, ["main-layout"]);
+  const { t, i18n, resources } = await initTranslations(locale, i18nNamespaces);
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -82,6 +86,13 @@ export default async function MainLayout({ children, locale }: Props) {
           </SheetContent>
         </Sheet>
         <div className="flex items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
+          <TranslationsProvider
+            namespaces={i18nNamespaces}
+            locale={locale}
+            resources={resources}
+          >
+            <LanguageChanger />
+          </TranslationsProvider>
           <ThemeToggleButton />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
