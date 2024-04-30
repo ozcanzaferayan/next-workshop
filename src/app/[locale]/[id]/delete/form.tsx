@@ -1,4 +1,8 @@
 "use client";
+import Link from "next/link";
+import { useFormState, useFormStatus } from "react-dom";
+import { useTranslation } from "react-i18next";
+
 import { deletePokemon } from "@/app/[locale]/[id]/delete/action";
 import PokemonListItem from "@/app/[locale]/pokemon-list-item";
 import { Pokemon } from "@/app/types";
@@ -12,52 +16,46 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { TrashIcon } from "lucide-react";
-import Link from "next/link";
-import { useFormState, useFormStatus } from "react-dom";
-import { z } from "zod";
-
-const initialState: {
-  errors: z.ZodIssue[] | undefined;
-} = {
-  errors: undefined,
-};
 
 type Props = {
   pokemon: Pokemon;
 };
 
 const DeleteButton = () => {
+  const { t } = useTranslation();
   const { pending } = useFormStatus();
 
   return (
     <Button type="submit" aria-disabled={pending}>
-      {pending ? "Pending" : "Delete"}
+      {pending ? t("form.buttons.pending") : t("form.buttons.delete")}
     </Button>
   );
 };
 
 const DeleteForm = ({ pokemon }: Props) => {
-  const [state, formAction] = useFormState(deletePokemon, initialState);
+  const { t } = useTranslation();
+  const [state, formAction] = useFormState(deletePokemon, null);
 
   return (
     <form action={formAction}>
-      <Card className={"w-[380px] m-4"}>
+      <Card className="w-[380px] m-4">
         <CardHeader>
-          <CardTitle>Delete {pokemon.name}?</CardTitle>
+          <CardTitle>
+            {t("form.title", { pokemonName: pokemon.name })}
+          </CardTitle>
           <CardDescription>
-            Are you sure you want to delete {pokemon.name}? This action cannot
-            be undone.
+            {t("form.description", { pokemonName: pokemon.name })}
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid divide-y">
+        <CardContent>
           <PokemonListItem pokemon={pokemon} hasActions={false} />
         </CardContent>
         <CardFooter className="flex justify-between">
           <Link href="/">
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">{t("form.buttons.cancel")}</Button>
           </Link>
-          <Button variant={"destructive"}>
-            <TrashIcon className="mr-2 h-4 w-4" /> Delete
+          <Button variant="destructive">
+            <TrashIcon className="mr-2 h-4 w-4" /> {t("form.buttons.delete")}
           </Button>
         </CardFooter>
       </Card>

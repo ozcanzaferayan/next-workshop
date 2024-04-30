@@ -1,0 +1,11 @@
+{
+  "form": {
+    "title": "Delete {{pokemonName}}?",
+    "description": "Are you sure you want to delete {{pokemonName}}? This action cannot be undone.",
+    "buttons": {
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "pending": "Pending"
+    }
+  }
+}

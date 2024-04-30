@@ -20,7 +20,7 @@ const PokemonListItem = ({ pokemon, hasActions = true }: Props) => {
           alt={pokemon.name}
           className="rounded-full"
           height="40"
-          src={"placeholder.svg"}
+          src={"/placeholder.svg"}
           style={{
             aspectRatio: "40/40",
             objectFit: "cover",

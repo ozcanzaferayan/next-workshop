@@ -1,6 +1,5 @@
 "use client";
-import { editPokemon } from "@/app/[locale]/[id]/edit/action";
-import { Pokemon } from "@/app/types";
+import { newPokemon } from "@/app/[locale]/new/action";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -33,13 +32,8 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
-type Props = {
-  pokemon: Pokemon;
-};
-
-const EditButton = () => {
+const CreateButton = () => {
   const { pending } = useFormStatus();
-
   return (
     <Button type="submit" aria-disabled={pending}>
       {pending ? "Pending" : "Save"}
@@ -47,21 +41,20 @@ const EditButton = () => {
   );
 };
 
-const EditForm = ({ pokemon }: Props) => {
+const NewPokemonForm = () => {
   const { t } = useTranslation();
+
   const schema = z.object({
-    id: z.string(),
     name: z.string().min(3, t("form.errors.name_length", { min: 3 })),
     type: z.string().min(1, t("form.errors.select_type")),
   });
 
-  const [state, formAction] = useFormState(editPokemon, null);
+  const [state, formAction] = useFormState(newPokemon, null);
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
-      id: pokemon.id,
-      name: pokemon.name,
-      type: pokemon.type,
+      name: "",
+      type: "",
     },
   });
   return (
@@ -127,7 +120,7 @@ const EditForm = ({ pokemon }: Props) => {
             <Link href="/" className="w-full">
               <Button variant="outline">{t("form.buttons.cancel")}</Button>
             </Link>
-            <EditButton />
+            <CreateButton />
           </CardFooter>
         </Card>
       </form>
@@ -135,4 +128,4 @@ const EditForm = ({ pokemon }: Props) => {
   );
 };
 
-export default EditForm;
+export default NewPokemonForm;

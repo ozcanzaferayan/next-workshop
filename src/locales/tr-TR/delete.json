@@ -1,0 +1,11 @@
+{
+  "form": {
+    "title": "{{pokemonName}} silinsin mi?",
+    "description": "{{pokemonName}} silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "buttons": {
+      "cancel": "İptal",
+      "delete": "Sil",
+      "pending": "Bekleniyor"
+    }
+  }
+}
