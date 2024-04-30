@@ -1,0 +1,17 @@
+{
+  "navigation": {
+    "toggle_menu": "Navigasyon menüsünü aç/kapa",
+    "toggle_user_menu": "Kullanıcı menüsünü aç/kapa"
+  },
+  "links": {
+    "acme_inc": "Acme A.Ş.",
+    "pokemons": "Pokemonlar",
+    "add": "Ekle"
+  },
+  "user_menu": {
+    "my_account": "Hesabım",
+    "settings": "Ayarlar",
+    "support": "Destek",
+    "logout": "Çıkış Yap"
+  }
+}

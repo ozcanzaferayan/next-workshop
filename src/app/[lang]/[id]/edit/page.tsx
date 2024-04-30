@@ -1,6 +1,6 @@
-import EditForm from "@/app/[id]/edit/form";
-import { Props } from "@/app/[id]/page";
-import { getPokemon } from "@/app/loaders";
+import EditForm from "@/app/[lang]/[id]/edit/form";
+import { Props } from "@/app/[lang]/[id]/page";
+import { getPokemon } from "@/app/[lang]/loaders";
 
 const Edit = async ({ params: { id } }: Props) => {
   const pokemon = await getPokemon(id);

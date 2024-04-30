@@ -1,0 +1,17 @@
+{
+  "navigation": {
+    "toggle_menu": "Toggle navigation menu",
+    "toggle_user_menu": "Toggle user menu"
+  },
+  "links": {
+    "acme_inc": "Acme Inc",
+    "pokemons": "Pokemons",
+    "add": "Add"
+  },
+  "user_menu": {
+    "my_account": "My Account",
+    "settings": "Settings",
+    "support": "Support",
+    "logout": "Logout"
+  }
+}

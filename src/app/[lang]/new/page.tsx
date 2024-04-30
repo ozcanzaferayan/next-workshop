@@ -1,6 +1,5 @@
 "use client";
-import { editPokemon } from "@/app/[id]/edit/action";
-import { Pokemon } from "@/app/types";
+import { newPokemon } from "@/app/[lang]/new/action";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -32,11 +31,9 @@ import { useFormState, useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-type Props = {
-  pokemon: Pokemon;
-};
+const initialState = null;
 
-const EditButton = () => {
+const CreateButton = () => {
   const { pending } = useFormStatus();
 
   return (
@@ -47,19 +44,17 @@ const EditButton = () => {
 };
 
 export const schema = z.object({
-  id: z.string(),
   name: z.string().min(3, "Name must be at least 3 characters"),
   type: z.string().min(3, "Please select a type"),
 });
 
-const EditForm = ({ pokemon }: Props) => {
-  const [state, formAction] = useFormState(editPokemon, null);
+const NewPokemon = () => {
+  const [state, formAction] = useFormState(newPokemon, initialState);
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
-      id: pokemon.id,
-      name: pokemon.name,
-      type: pokemon.type,
+      name: "",
+      type: "",
     },
   });
   return (
@@ -67,8 +62,10 @@ const EditForm = ({ pokemon }: Props) => {
       <form onSubmit={form.handleSubmit(formAction)} className="p-4">
         <Card className="w-[350px]">
           <CardHeader>
-            <CardTitle>Edit pokemon</CardTitle>
-            <CardDescription>Edit the details of the pokemon</CardDescription>
+            <CardTitle>Create pokemon</CardTitle>
+            <CardDescription>
+              Fill the form to create a new pokemon.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid w-full items-center gap-4">
@@ -131,7 +128,7 @@ const EditForm = ({ pokemon }: Props) => {
             <Link href="/" className="w-full">
               <Button variant="outline">Cancel</Button>
             </Link>
-            <EditButton />
+            <CreateButton />
           </CardFooter>
         </Card>
       </form>
@@ -139,4 +136,4 @@ const EditForm = ({ pokemon }: Props) => {
   );
 };
 
-export default EditForm;
+export default NewPokemon;

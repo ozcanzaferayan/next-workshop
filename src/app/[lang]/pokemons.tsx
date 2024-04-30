@@ -1,4 +1,4 @@
-import PokemonListItem from "@/app/pokemon-list-item";
+import PokemonListItem from "@/app/[lang]/pokemon-list-item";
 import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {

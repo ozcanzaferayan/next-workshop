@@ -13,12 +13,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { getDictionary } from "@/dictionaries";
 
 type Props = {
   children: React.ReactNode;
+  lang: string;
 };
 
-export default async function MainLayout({ children }: Props) {
+export default async function MainLayout({ children, lang }: Props) {
+  const t = await getDictionary(lang);
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -28,19 +31,19 @@ export default async function MainLayout({ children }: Props) {
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">{t.links.acme_inc}</span>
           </Link>
           <Link
             href="/"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Pokemons
+            {t.links.pokemons}
           </Link>
           <Link
             href="/new"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Add
+            {t.links.add}
           </Link>
         </nav>
         <Sheet>
