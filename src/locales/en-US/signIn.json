@@ -1,0 +1,23 @@
+{
+  "loginForm": {
+    "title": "Login",
+    "description": "Enter your email below to login to your account.",
+    "labels": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "placeholders": {
+      "email": "m@example.com",
+      "password": "Password"
+    },
+    "buttons": {
+      "signIn": "Sign in",
+      "cancel": "Cancel"
+    },
+    "errors": {
+      "email": "Please enter a valid email address",
+      "password": "Please enter a password",
+      "password_length": "Password must be at least {{min}} characters long"
+    }
+  }
+}

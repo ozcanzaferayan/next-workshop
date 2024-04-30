@@ -1,0 +1,23 @@
+{
+  "loginForm": {
+    "title": "Giriş Yap",
+    "description": "Hesabınıza giriş yapmak için aşağıya e-postanızı girin.",
+    "labels": {
+      "email": "E-posta",
+      "password": "Şifre"
+    },
+    "placeholders": {
+      "email": "ornek@ornek.com",
+      "password": "Şifre"
+    },
+    "buttons": {
+      "signIn": "Giriş Yap",
+      "cancel": "İptal"
+    },
+    "errors": {
+      "email": "Geçerli bir e-posta adresi girin",
+      "password_length": "Şifre en az {{min}} karakter olmalıdır",
+      "password": "Şifre alanı boş bırakılamaz"
+    }
+  }
+}

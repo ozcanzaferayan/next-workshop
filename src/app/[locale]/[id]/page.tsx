@@ -15,7 +15,6 @@ export type Props = {
 };
 
 const PokemonDetail = async ({ params: { id } }: Props) => {
-  console.log("ID", id);
   const pokemon = await getPokemon(id);
   return (
     <Card className={"w-[380px] m-4"}>

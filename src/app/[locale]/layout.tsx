@@ -1,4 +1,5 @@
 import MainLayout from "@/app/[locale]/main-layout";
+import NextAuthProvider from "@/context/NextAuthProvider";
 import { ThemeProvider } from "@/theme/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -29,7 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <MainLayout locale={locale}>{children}</MainLayout>
+          <NextAuthProvider>
+            <MainLayout locale={locale}>{children}</MainLayout>
+          </NextAuthProvider>
         </ThemeProvider>
       </body>
     </html>
