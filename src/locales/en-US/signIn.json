@@ -1,7 +1,7 @@
 {
   "form": {
-    "title": "Login",
-    "description": "Enter your email below to login to your account.",
+    "title": "SignIn",
+    "description": "Enter your email below to signIn to your account.",
     "labels": {
       "email": "Email",
       "password": "Password"

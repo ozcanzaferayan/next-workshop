@@ -25,7 +25,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
-const LoginButton = () => {
+const SignInButton = () => {
   const { t } = useTranslation();
   const { pending } = useFormStatus();
 
@@ -99,7 +99,7 @@ const SignInForm = () => {
             <Link href="/" className="w-full">
               <Button variant="outline">{t("form.buttons.cancel")}</Button>
             </Link>
-            <LoginButton />
+            <SignInButton />
           </CardFooter>
         </Card>
       </form>

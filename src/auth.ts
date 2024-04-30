@@ -42,7 +42,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const { email, password } = await signInSchema.parseAsync(credentials);
 
         // logic to verify if user exists
-        const res = await fetch(`${API_URL}/login`, {
+        const res = await fetch(`${API_URL}/signIn`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         console.log("USERRR", user);
 
         if (!user) {
-          // No user found, so this is their first attempt to login
+          // No user found, so this is their first attempt to signIn
           // meaning this is also the place you could do registration
           throw new Error("User not found.");
         }

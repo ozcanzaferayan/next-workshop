@@ -1,7 +1,7 @@
 {
   "form": {
     "title": "Register",
-    "description": "Enter your email below to login to your account.",
+    "description": "Enter your email below to signIn to your account.",
     "labels": {
       "email": "Email",
       "password": "Password"

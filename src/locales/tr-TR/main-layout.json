@@ -12,6 +12,7 @@
     "my_account": "Hesabım",
     "settings": "Ayarlar",
     "support": "Destek",
-    "logout": "Çıkış Yap"
+    "signOut": "Çıkış Yap",
+    "signIn": "Giriş Yap"
   }
 }
