@@ -1,5 +1,5 @@
-import DeleteForm from "@/app/[lang]/[id]/delete/form";
-import { getPokemon } from "@/app/[lang]/loaders";
+import DeleteForm from "@/app/[locale]/[id]/delete/form";
+import { getPokemon } from "@/app/[locale]/loaders";
 
 export type Props = {
   params: {

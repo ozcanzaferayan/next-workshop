@@ -1,0 +1,9 @@
+{
+  "card": {
+    "title": "Pokemons",
+    "description": "You have {{count}} pokemons in Pokedex."
+  },
+  "button": {
+    "add_new": "Add new"
+  }
+}

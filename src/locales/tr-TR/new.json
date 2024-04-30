@@ -1,0 +1,43 @@
+{
+  "form": {
+    "title": "Pokemon Oluştur",
+    "description": "Yeni bir pokemon oluşturmak için formu doldurun.",
+    "labels": {
+      "pokemon_name": "Pokemon Adı",
+      "type": "Tür"
+    },
+    "placeholders": {
+      "enter_pokemon": "Yeni bir pokemon girin",
+      "select_type": "Seçiniz"
+    },
+    "type_options": {
+      "fire": "Ateş",
+      "water": "Su",
+      "grass": "Çim",
+      "electric": "Elektrik",
+      "psychic": "Psişik",
+      "ice": "Buz",
+      "dragon": "Ejderha",
+      "dark": "Karanlık",
+      "fairy": "Peri",
+      "fighting": "Dövüş",
+      "flying": "Uçan",
+      "poison": "Zehir",
+      "ground": "Toprak",
+      "rock": "Kaya",
+      "bug": "Böcek",
+      "ghost": "Hayalet",
+      "steel": "Çelik",
+      "normal": "Normal"
+    },
+    "buttons": {
+      "cancel": "İptal",
+      "save": "Kaydet",
+      "pending": "Bekleniyor"
+    },
+    "errors": {
+      "name_length": "Ad en az 3 karakter olmalıdır",
+      "select_type": "Lütfen bir tür seçiniz"
+    }
+  }
+}

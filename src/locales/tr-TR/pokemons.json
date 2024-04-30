@@ -1,0 +1,9 @@
+{
+  "card": {
+    "title": "Pokemonlar",
+    "description": "Pokedex'te {{count}} adet pokemonunuz var."
+  },
+  "button": {
+    "add_new": "Yeni Ekle"
+  }
+}

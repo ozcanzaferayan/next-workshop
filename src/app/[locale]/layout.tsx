@@ -1,4 +1,4 @@
-import MainLayout from "@/app/[lang]/main-layout";
+import MainLayout from "@/app/[locale]/main-layout";
 import { ThemeProvider } from "@/theme/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { lang },
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
   params: {
-    lang: string;
+    locale: string;
   };
 }>) {
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -29,7 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <MainLayout lang={lang}>{children}</MainLayout>
+          <MainLayout locale={locale}>{children}</MainLayout>
         </ThemeProvider>
       </body>
     </html>

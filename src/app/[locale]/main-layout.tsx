@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
+import initTranslations from "@/app/i18n";
 import { ThemeToggleButton } from "@/components/ThemeToggleButton";
 import {
   DropdownMenu,
@@ -13,15 +14,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { getDictionary } from "@/dictionaries";
 
 type Props = {
   children: React.ReactNode;
-  lang: string;
+  locale: string;
 };
 
-export default async function MainLayout({ children, lang }: Props) {
-  const t = await getDictionary(lang);
+export default async function MainLayout({ children, locale }: Props) {
+  const { t } = await initTranslations(locale, ["main-layout"]);
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -31,19 +31,19 @@ export default async function MainLayout({ children, lang }: Props) {
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
-            <span className="sr-only">{t.links.acme_inc}</span>
+            <span className="sr-only">{t("links.acme_inc")}</span>
           </Link>
           <Link
             href="/"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            {t.links.pokemons}
+            {t("links.pokemons")}
           </Link>
           <Link
             href="/new"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            {t.links.add}
+            {t("links.add")}
           </Link>
         </nav>
         <Sheet>
@@ -54,7 +54,7 @@ export default async function MainLayout({ children, lang }: Props) {
               className="shrink-0 md:hidden"
             >
               <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle navigation menu</span>
+              <span className="sr-only">{t("navigation.toggle_menu")}</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
@@ -64,19 +64,19 @@ export default async function MainLayout({ children, lang }: Props) {
                 className="flex items-center gap-2 text-lg font-semibold"
               >
                 <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
+                <span className="sr-only">{t("links.acme_inc")}</span>
               </Link>
               <Link
                 href="/"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Pokemons
+                {t("links.pokemons")}
               </Link>
               <Link
                 href="/new"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Add
+                {t("links.add")}
               </Link>
             </nav>
           </SheetContent>
@@ -87,16 +87,18 @@ export default async function MainLayout({ children, lang }: Props) {
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
                 <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
+                <span className="sr-only">
+                  {t("navigation.toggle_user_menu")}
+                </span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>{t("user_menu.my_account")}</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuItem>{t("user_menu.settings")}</DropdownMenuItem>
+              <DropdownMenuItem>{t("user_menu.support")}</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem>{t("user_menu.logout")}</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

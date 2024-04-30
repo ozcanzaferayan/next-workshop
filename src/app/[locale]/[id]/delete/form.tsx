@@ -1,6 +1,6 @@
 "use client";
-import { deletePokemon } from "@/app/[lang]/[id]/delete/action";
-import PokemonListItem from "@/app/[lang]/pokemon-list-item";
+import { deletePokemon } from "@/app/[locale]/[id]/delete/action";
+import PokemonListItem from "@/app/[locale]/pokemon-list-item";
 import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {

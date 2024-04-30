@@ -1,4 +1,4 @@
-import PokemonListItem from "@/app/[lang]/pokemon-list-item";
+import PokemonListItem from "@/app/[locale]/pokemon-list-item";
 import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,16 +14,17 @@ import { PlusIcon } from "lucide-react";
 import Link from "next/link";
 
 type Props = {
+  t: (key: string, values?: Record<string, string | number>) => string;
   pokemons: Pokemon[];
 };
 
-const Pokemons = async ({ pokemons }: Props) => {
+const Pokemons = ({ pokemons, t }: Props) => {
   return (
     <Card className={cn("w-[380px] m-4")}>
       <CardHeader>
-        <CardTitle>Pokemons</CardTitle>
+        <CardTitle>{t("card.title")}</CardTitle>
         <CardDescription>
-          You have {pokemons.length} pokemons in Pokedex.
+          {t("card.description", { count: pokemons.length })}
         </CardDescription>
       </CardHeader>
       <CardContent className="grid divide-y">
@@ -34,7 +35,7 @@ const Pokemons = async ({ pokemons }: Props) => {
       <CardFooter>
         <Link href="/new" className="w-full">
           <Button className="w-full">
-            <PlusIcon className="mr-2 h-4 w-4" /> Add new
+            <PlusIcon className="mr-2 h-4 w-4" /> {t("button.add_new")}
           </Button>
         </Link>
       </CardFooter>

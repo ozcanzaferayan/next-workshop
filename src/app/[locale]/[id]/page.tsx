@@ -1,5 +1,5 @@
-import { getPokemon } from "@/app/[lang]/loaders";
-import PokemonListItem from "@/app/[lang]/pokemon-list-item";
+import { getPokemon } from "@/app/[locale]/loaders";
+import PokemonListItem from "@/app/[locale]/pokemon-list-item";
 import {
   Card,
   CardContent,

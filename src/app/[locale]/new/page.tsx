@@ -1,5 +1,5 @@
 "use client";
-import { newPokemon } from "@/app/[lang]/new/action";
+import { newPokemon } from "@/app/[locale]/new/action";
 import { Button } from "@/components/ui/button";
 import {
   Card,

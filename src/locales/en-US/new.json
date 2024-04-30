@@ -1,0 +1,43 @@
+{
+  "form": {
+    "title": "Create pokemon",
+    "description": "Fill the form to create a new pokemon.",
+    "labels": {
+      "pokemon_name": "Pokemon name",
+      "type": "Type"
+    },
+    "placeholders": {
+      "enter_pokemon": "Enter a new pokemon",
+      "select_type": "Select"
+    },
+    "type_options": {
+      "fire": "Fire",
+      "water": "Water",
+      "grass": "Grass",
+      "electric": "Electric",
+      "psychic": "Psychic",
+      "ice": "Ice",
+      "dragon": "Dragon",
+      "dark": "Dark",
+      "fairy": "Fairy",
+      "fighting": "Fighting",
+      "flying": "Flying",
+      "poison": "Poison",
+      "ground": "Ground",
+      "rock": "Rock",
+      "bug": "Bug",
+      "ghost": "Ghost",
+      "steel": "Steel",
+      "normal": "Normal"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save",
+      "pending": "Pending"
+    },
+    "errors": {
+      "name_length": "Name must be at least 3 characters",
+      "select_type": "Please select a type"
+    }
+  }
+}
