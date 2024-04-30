@@ -54,7 +54,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         });
 
         user = (await res.json()).user;
-        console.log("USERRR", user);
 
         if (!user) {
           // No user found, so this is their first attempt to signIn

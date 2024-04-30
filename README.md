@@ -21,5 +21,5 @@ pnpm dev
 - [x] [Form validations](https://ui.shadcn.com/docs/components/form)
 - [x] [Next Theme](https://ui.shadcn.com/docs/dark-mode/next)
 - [x] [i18n](https://i18nexus.com/tutorials/nextjs/react-i18next)
-- [ ] [Next Auth](https://authjs.dev/getting-started/installation?framework=next.js)
+- [x] [Next Auth](https://authjs.dev/getting-started/installation?framework=next.js)
 - [ ] Prisma
