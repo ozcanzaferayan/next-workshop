@@ -1,5 +1,16 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$2qbdwaO.bpOv90.lmElwGOydYuUbA55/Msue0BUHQ57oz5ccMEdmO",
+      "id": 1
+    },
+    {
+      "email": "zafer@gmail.com",
+      "password": "$2a$10$LNxTMYdvr3iyf7.vclOHKOBsd1xQkVO7jnAUfuXYbvi0ljzlVxVr.",
+      "id": 2
+    }
+  ],
   "pokemons": [
     {
       "id": "1",

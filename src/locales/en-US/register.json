@@ -1,6 +1,6 @@
 {
   "form": {
-    "title": "Login",
+    "title": "Register",
     "description": "Enter your email below to login to your account.",
     "labels": {
       "email": "Email",
@@ -11,7 +11,7 @@
       "password": "Password"
     },
     "buttons": {
-      "signIn": "Sign in",
+      "signIn": "Register",
       "cancel": "Cancel"
     },
     "errors": {

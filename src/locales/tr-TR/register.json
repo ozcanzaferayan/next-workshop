@@ -1,6 +1,6 @@
 {
   "form": {
-    "title": "Giriş Yap",
+    "title": "Kayıt Ol",
     "description": "Hesabınıza giriş yapmak için aşağıya e-postanızı girin.",
     "labels": {
       "email": "E-posta",
@@ -11,7 +11,7 @@
       "password": "Şifre"
     },
     "buttons": {
-      "signIn": "Giriş Yap",
+      "signIn": "Kayıt Ol",
       "cancel": "İptal"
     },
     "errors": {

@@ -1,5 +1,5 @@
 "use client";
-import { signInAction } from "@/app/[locale]/signIn/action";
+import { registerAction } from "@/app/[locale]/register/action";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -36,19 +36,19 @@ const LoginButton = () => {
   );
 };
 
-const SignInForm = () => {
+const RegisterForm = () => {
   const { t } = useTranslation();
   const schema = z.object({
     email: z.string().email(t("form.errors.email")),
     password: z.string().min(8, t("form.errors.password_length", { min: 8 })),
   });
 
-  const [state, formAction] = useFormState(signInAction, null);
+  const [state, formAction] = useFormState(registerAction, null);
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
-      email: "olivier@mail.com",
-      password: "bestPassw0rd",
+      email: "zafer@gmail.com",
+      password: "12345678",
     },
   });
   return (
@@ -107,4 +107,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default RegisterForm;
