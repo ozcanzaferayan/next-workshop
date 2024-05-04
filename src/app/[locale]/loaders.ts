@@ -1,4 +1,4 @@
-import { Pokemon } from "@/app/types";
+import { Pokemon } from "@/lib/db";
 
 export const API_URL = "http://localhost:3001";
 

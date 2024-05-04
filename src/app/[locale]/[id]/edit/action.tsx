@@ -1,6 +1,6 @@
 "use server";
 import { API_URL } from "@/app/[locale]/loaders";
-import { Pokemon } from "@/app/types";
+import { Pokemon } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 

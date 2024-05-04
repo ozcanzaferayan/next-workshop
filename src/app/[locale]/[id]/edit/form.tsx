@@ -1,6 +1,5 @@
 "use client";
 import { editPokemon } from "@/app/[locale]/[id]/edit/action";
-import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -26,6 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Pokemon } from "@/lib/db";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useFormState, useFormStatus } from "react-dom";

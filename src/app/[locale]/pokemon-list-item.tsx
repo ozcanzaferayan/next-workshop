@@ -1,5 +1,5 @@
-import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
+import { Pokemon } from "@/lib/db";
 import { EditIcon, TrashIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

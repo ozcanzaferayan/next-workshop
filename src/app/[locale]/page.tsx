@@ -1,6 +1,6 @@
-import { getPokemons } from "@/app/[locale]/loaders";
 import Pokemons from "@/app/[locale]/pokemons";
 import initTranslations from "@/app/i18n";
+import { db, pokemons } from "@/lib/db";
 
 type Props = {
   params: {
@@ -11,9 +11,9 @@ type Props = {
 const i18nNamespaces = ["pokemons"];
 
 const page = async ({ params: { locale } }: Props) => {
-  const pokemons = await getPokemons();
+  const data = await db.select().from(pokemons);
   const { t } = await initTranslations(locale, i18nNamespaces);
-  return <Pokemons t={t} pokemons={pokemons} />;
+  return <Pokemons t={t} pokemons={data} />;
 };
 
 export default page;

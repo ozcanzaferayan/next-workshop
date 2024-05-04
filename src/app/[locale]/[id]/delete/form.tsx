@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 
 import { deletePokemon } from "@/app/[locale]/[id]/delete/action";
 import PokemonListItem from "@/app/[locale]/pokemon-list-item";
-import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,6 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Pokemon } from "@/lib/db";
 import { TrashIcon } from "lucide-react";
 
 type Props = {

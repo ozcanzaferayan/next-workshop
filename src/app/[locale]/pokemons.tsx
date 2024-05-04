@@ -1,5 +1,4 @@
 import PokemonListItem from "@/app/[locale]/pokemon-list-item";
-import { Pokemon } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Pokemon } from "@/lib/db";
 import { cn } from "@/lib/utils";
 import { PlusIcon } from "lucide-react";
 import Link from "next/link";
