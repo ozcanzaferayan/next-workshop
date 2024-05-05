@@ -10,7 +10,11 @@
     "server": "next dev",
     "dev2": "concurrently \"npm run server\" \"npm run db\"",
     "dev": "npm run server",
-    "studio": "npx drizzle-kit studio --verbose"
+    "studio": "npx drizzle-kit studio --verbose",
+    "drizzle:drop": "drizzle-kit drop",
+    "drizzle:generate": "drizzle-kit generate:pg",
+    "drizzle:push": "drizzle-kit push:pg",
+    "drizzle:seed": "node --loader esbuild-register/loader -r esbuild-register ./src/db/seed.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -21,6 +25,7 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@t3-oss/env-nextjs": "^0.10.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "drizzle-kit": "^0.20.17",
@@ -41,11 +46,13 @@
     "zod": "^3.23.4"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
+    "esbuild-register": "^3.5.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "express": "^4.19.2",
@@ -54,6 +61,8 @@
     "pg": "^8.11.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.9.1",
     "typescript": "^5"
   }
 }

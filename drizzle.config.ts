@@ -1,17 +1,11 @@
 import type { Config } from "drizzle-kit";
-let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
-
-//dotenv.config();
-
-const connectionString = `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?sslmode=require`;
-
-console.log(connectionString);
+import { env } from "./src/env.mjs";
 
 export default {
-  schema: "./src/db/schema/*",
-  out: "./drizzle",
+  schema: "./src/db/schema",
   driver: "pg",
+  out: "./src/db/migrations",
   dbCredentials: {
-    connectionString: connectionString,
+    connectionString: env.DATABASE_URL,
   },
 } satisfies Config;
