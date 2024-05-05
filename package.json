@@ -10,7 +10,7 @@
     "server": "next dev",
     "dev2": "concurrently \"npm run server\" \"npm run db\"",
     "dev": "npm run server",
-    "studio": "npx drizzle-kit studio --verbose",
+    "drizzle:studio": "drizzle-kit studio --verbose",
     "drizzle:drop": "drizzle-kit drop",
     "drizzle:generate": "drizzle-kit generate:pg",
     "drizzle:push": "drizzle-kit push:pg",
