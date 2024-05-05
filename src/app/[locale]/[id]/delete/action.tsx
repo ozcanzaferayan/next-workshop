@@ -1,5 +1,7 @@
 "use server";
-import { API_URL } from "@/app/[locale]/loaders";
+import { db } from "@/db";
+import { pokemons } from "@/db/schema/pokemons";
+import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -21,10 +23,8 @@ export async function deletePokemon(prevState: any, formData: FormData) {
 
   const pokemon = parse.data;
 
-  await fetch(`${API_URL}/pokemons/${pokemon.id}`, {
-    method: "DELETE",
-  });
+  await db.delete(pokemons).where(eq(pokemons.id, parseInt(pokemon.id)));
 
-  revalidatePath("/");
+  revalidatePath("/", "layout");
   redirect("/");
 }

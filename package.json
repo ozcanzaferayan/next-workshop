@@ -8,7 +8,9 @@
     "lint": "next lint",
     "db": "json-server-auth --watch db.json --port 3001",
     "server": "next dev",
-    "dev": "concurrently \"npm run server\" \"npm run db\""
+    "dev2": "concurrently \"npm run server\" \"npm run db\"",
+    "dev": "npm run server",
+    "studio": "npx drizzle-kit studio --verbose"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -43,11 +45,13 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "express": "^4.19.2",
     "json-server": "0.17.4",
     "json-server-auth": "^2.1.0",
+    "pg": "^8.11.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

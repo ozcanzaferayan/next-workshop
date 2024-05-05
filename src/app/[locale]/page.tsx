@@ -1,6 +1,7 @@
 import Pokemons from "@/app/[locale]/pokemons";
 import initTranslations from "@/app/i18n";
-import { db, pokemons } from "@/lib/db";
+import { db } from "@/db";
+import { pokemons } from "@/db/schema/pokemons";
 
 type Props = {
   params: {

@@ -1,4 +1,3 @@
-import { getPokemon } from "@/app/[locale]/loaders";
 import PokemonListItem from "@/app/[locale]/pokemon-list-item";
 import {
   Card,
@@ -7,6 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { db } from "@/db";
+import { pokemons } from "@/db/schema/pokemons";
+import { eq } from "drizzle-orm";
 
 export type Props = {
   params: {
@@ -15,7 +17,13 @@ export type Props = {
 };
 
 const PokemonDetail = async ({ params: { id } }: Props) => {
-  const pokemon = await getPokemon(id);
+  const pokemon = (
+    await db
+      .select()
+      .from(pokemons)
+      .where(eq(pokemons.id, parseInt(id)))
+  )[0];
+
   return (
     <Card className={"w-[380px] m-4"}>
       <CardHeader>

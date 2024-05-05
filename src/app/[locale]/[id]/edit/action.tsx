@@ -1,19 +1,13 @@
 "use server";
-import { API_URL } from "@/app/[locale]/loaders";
-import { Pokemon } from "@/lib/db";
+import { db } from "@/db";
+import { Pokemon, pokemons } from "@/db/schema/pokemons";
+import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function editPokemon(prevState: any, pokemon: Pokemon) {
-  await fetch(`${API_URL}/pokemons/${pokemon.id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(pokemon),
-  });
+  await db.update(pokemons).set(pokemon).where(eq(pokemons.id, pokemon.id));
 
-  revalidatePath("/");
-  revalidatePath(`/${pokemon.id}/edit`);
+  revalidatePath("/", "layout");
   redirect("/");
 }

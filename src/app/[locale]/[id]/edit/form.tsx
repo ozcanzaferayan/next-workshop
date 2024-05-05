@@ -25,7 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Pokemon } from "@/lib/db";
+import { Pokemon } from "@/db/schema/pokemons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useFormState, useFormStatus } from "react-dom";
@@ -50,7 +50,7 @@ const EditButton = () => {
 const EditForm = ({ pokemon }: Props) => {
   const { t } = useTranslation();
   const schema = z.object({
-    id: z.string(),
+    id: z.number(),
     name: z.string().min(3, t("form.errors.name_length", { min: 3 })),
     type: z.string().min(1, t("form.errors.select_type")),
   });

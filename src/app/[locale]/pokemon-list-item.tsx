@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Pokemon } from "@/lib/db";
+import { Pokemon } from "@/db/schema/pokemons";
 import { EditIcon, TrashIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Pokemon } from "@/lib/db";
+import { Pokemon } from "@/db/schema/pokemons";
 import { TrashIcon } from "lucide-react";
 
 type Props = {
