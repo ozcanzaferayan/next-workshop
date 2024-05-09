@@ -22,4 +22,10 @@ pnpm dev
 - [x] [Next Theme](https://ui.shadcn.com/docs/dark-mode/next)
 - [x] [i18n](https://i18nexus.com/tutorials/nextjs/react-i18next)
 - [x] [Next Auth](https://authjs.dev/getting-started/installation?framework=next.js)
-- [ ] Prisma
+- [ ] Drizzle
+- [ ] Corepack
+- [ ] VSCode Extensions (e.g. i18n-ally)
+- [ ] .env instead .env.sample
+- [ ] db.json to data/db.json
+- [ ] Create NEXT_DATA_SOURCE and use Strategy pattern to fetch data
+- [ ] Create connectionString (drizzle and db) into one file db/conns.ts
